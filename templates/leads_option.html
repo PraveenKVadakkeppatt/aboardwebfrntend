@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive 3D Cards</title>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <style>
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background-color: #ecf0f3;
+}
+section {
+  height: 100vh;
+  display: flex;
+  padding: 0 4em;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.container {
+  perspective: 1000px;
+  height: 28vh;
+  width: 100%;
+  cursor: pointer;
+}
+.card {
+  transform-style: preserve-3d;
+  height: 100%;
+  width: 100%;
+  transition: 0.5s ease;
+}
+.front,
+.back {
+  height: 100%;
+  width: 100%;
+  transform-style: preserve-3d;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 0.4em;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  backface-visibility: hidden;
+}
+.front {
+  background: linear-gradient(to right, #a246ef, #6523fe);
+}
+.front img {
+  width: 5em;
+}
+.content {
+  transform: translateZ(60px);
+}
+.content a {
+  font-size: 22px;
+  margin-top: 1em;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  color: #fff;
+}
+.content p {
+  font-size: 14px;
+  line-height: 2em;
+  letter-spacing: 0.02em;
+  padding: 0 3em;
+}
+.back {
+  background-color: #28253a;
+  transform: rotateX(180deg);
+}
+.container:hover .card {
+  transform: rotateX(180deg);
+}
+@media screen and (min-width: 992px) {
+  section {
+    padding: 0 1em;
+  }
+  .container {
+    flex-basis: 0 0 33.33%;
+    max-width: 33.33%;
+    padding: 0 1.5em;
+  }
+}
+
+  </style>
+    <body>
+      <section>
+        <div class="container">
+          <div class="card">
+            <div class="front">
+              <div class="content">
+                <a href="add_leads"><h3>ADD LEADS</h3></a>
+              </div>
+            </div>
+            <div class="back">
+              <div class="content">
+                <a href="add_leads"><h3>ADD LEADS</h3></a>
+
+                
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="container">
+          <div class="card">
+            <div class="front">
+              <div class="content">
+                <a href="#"><h3>CURRENT LEADS</h3></a>
+              </div>
+            </div>
+            <div class="back">
+              <div class="content">
+                <a href="#"><h3>CURRENT LEADS</h3></a>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="container">
+          <div class="card">
+            <div class="front">
+              <div class="content">
+                <a href="#"><h3>PREVIOUS LEADS</h3></a>
+              </div>
+            </div>
+            <div class="back">
+              <div class="content">
+                <a href="#"><h3>PREVIOUS LEADS</h3></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </body>
+  </html>
